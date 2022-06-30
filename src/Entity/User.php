@@ -3,13 +3,16 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use DateTime;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
@@ -37,9 +40,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255)]
     private $post;
-
-    #[ORM\Column(type: 'string', length: 255)]
-    private $creationdate;
 
     #[ORM\OneToOne(targetEntity: Parameter::class, cascade: ['persist', 'remove'])]
     private $parameter;
@@ -178,17 +178,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getCreationdate(): ?string
-    {
-        return $this->creationdate;
-    }
-
-    public function setCreationdate(string $creationdate): self
-    {
-        $this->creationdate = $creationdate;
-
-        return $this;
-    }
 
     public function getParameter(): ?Parameter
     {
