@@ -12,14 +12,10 @@
         {% endblock %}
 
         {% block body %}
-            {# Heading #}
-                <aside>
-                    {% include 'sidebar/index.html.twig' %}
-                </aside>
         {% endblock %}
 
+    </body>
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
-    </body>
 </html>

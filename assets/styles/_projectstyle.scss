@@ -1,7 +1,8 @@
 .all-projects
 {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .project-description
@@ -12,6 +13,9 @@
 .sprint-button
 {
     margin-top: 1vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap
 }
 
 .sprint-description
@@ -22,6 +26,19 @@
 .tache-button
 {
     margin-top: 1vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
+
+.btn.btn-outline-warning
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn.btn-outline-success
@@ -30,14 +47,18 @@
     justify-content: center;
     align-items: center;
     width: 12vw;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.bi.bi-plus-circle
+/*.bi.bi-plus-circle
 {
-    
-}
 
-#accordionFlushProject1
+}*/
+
+.accordion.accordion-flush
 {
     width: 80vw;
+    border: 10px double #000000;
+    margin-top: 5vh;
 }
