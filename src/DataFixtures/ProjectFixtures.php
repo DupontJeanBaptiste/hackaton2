@@ -15,7 +15,7 @@ class ProjectFixtures extends Fixture
 
         for ($i = 0; $i < 10; $i++) {
             $project = new Project();
-            $project->setName($faker->word())
+            $project->setName($faker->sentence(2))
             ->setDescription($faker->paragraph())
             ->setClient($faker->company())
             ->setStatus(rand(0, 1))
