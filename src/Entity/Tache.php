@@ -40,9 +40,13 @@ class Tache
     #[ORM\JoinColumn(nullable: false)]
     private $sprint;
 
+    #[ORM\OneToMany(mappedBy: 'tache', targetEntity: Comment::class, orphanRemoval: true)]
+    private $comments;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -157,6 +161,36 @@ class Tache
     public function setSprint(?Sprint $sprint): self
     {
         $this->sprint = $sprint;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Comment>
+     */
+    public function getComments(): Collection
+    {
+        return $this->comments;
+    }
+
+    public function addComment(Comment $comment): self
+    {
+        if (!$this->comments->contains($comment)) {
+            $this->comments[] = $comment;
+            $comment->setTache($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComment(Comment $comment): self
+    {
+        if ($this->comments->removeElement($comment)) {
+            // set the owning side to null (unless already changed)
+            if ($comment->getTache() === $this) {
+                $comment->setTache(null);
+            }
+        }
 
         return $this;
     }
