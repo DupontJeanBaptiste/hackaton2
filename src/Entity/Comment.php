@@ -60,4 +60,11 @@ class Comment
         return $this;
     }
 
+    public function setContent(string $content): self
+    {
+        $this->content = $content;
+
+        return $this;
+    }
+
 }
