@@ -4,7 +4,7 @@
 		<div class="d-flex justify-content-between">
 			<div>
 				<h5 class="card-title">{{name}}</h5>
-				<p class="card-text">{{description}}</p>
+				<p class="card-text col-10">{{description}}</p>
 				<div class="d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle mx-2" viewbox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -13,8 +13,8 @@
                     <p class="text-muted m-0">{{client}}</p>
                 </div>
 			</div>
-			<div class="d-flex align-items-center">
-				<a href="#" class="btn btn-primary ">Rejoindre le projet</a>
+			<div class="d-flex justify-content-end align-items-center col-2">
+				<a href="{{path('project_save', {id: id})}}" class="btn {{ app.user.isOnProject(project) ? 'btn-success' : 'btn-primary' }} project-add">{{ app.user.isOnProject(project) ? 'Projet enregistré !' : 'Rejoindre le projet' }}</a>
 			</div>
 		</div>
 	</div>

@@ -2,6 +2,7 @@
 
 namespace App\Components;
 
+use App\Entity\Project;
 use App\Repository\ProjectRepository;
 use Doctrine\Common\Collections\Collection;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
@@ -10,6 +11,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 class ProjectComponent
 {
 
+    public Project $project;
     public string $id;
     public string $name;
     public string $description;
@@ -20,4 +22,7 @@ class ProjectComponent
     public function __construct(private ProjectRepository $projectRepository)
     {
     }
+
+
 }
+

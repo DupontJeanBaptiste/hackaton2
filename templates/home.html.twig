@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
-  {% block body %}
+{% block body %}
 
-    {% block stylesheets %}
-      
-    {% endblock %}
-  {% endblock %}
+	<div class="container col-10">
+		{{component('all_projects')}}
+	</div>
+  
+{% endblock %}
