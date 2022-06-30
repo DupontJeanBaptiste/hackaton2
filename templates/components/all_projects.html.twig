@@ -1,0 +1,10 @@
+{% for project in this.allProjects %}
+
+	{{component('project', {
+    name: project.name,
+    description: project.description,
+    client: project.client,
+    users: project.users
+    })}}
+
+{% endfor %}

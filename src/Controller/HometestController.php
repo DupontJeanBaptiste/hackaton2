@@ -3,16 +3,16 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/home')]
-class HomeController extends AbstractController
+class HometestController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/hometest', name: 'app_hometest')]
     public function index(): Response
     {
-        return $this->render('home.html.twig');
+        return $this->render('hometest/index.html.twig', [
+            'controller_name' => 'HometestController',
+        ]);
     }
 }
