@@ -1,0 +1,43 @@
+.all-projects
+{
+    display: flex;
+    justify-content: center;
+}
+
+.project-description
+{
+    border-bottom: 5px solid #000000;
+}
+
+.sprint-button
+{
+    margin-top: 1vh;
+}
+
+.sprint-description
+{
+    border-bottom: 5px solid #000000;
+}
+
+.tache-button
+{
+    margin-top: 1vh;
+}
+
+.btn.btn-outline-success
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+}
+
+.bi.bi-plus-circle
+{
+    
+}
+
+#accordionFlushProject1
+{
+    width: 80vw;
+}
