@@ -37,9 +37,8 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
                 ->setLastname($faker->lastName())
                 ->setRoles(['ROLE_USER'])
                 ->setTeam(self::TEAMS[array_rand(self::TEAMS)])
-                ->setPost('Web Developper')
-                ->setCreationdate($faker->dateTimeThisYear());
-
+                ->setPost('Web Developper');
+            
             for ($j = 0; $j < rand(1, 5); $j++) {
                 $user->addProject($this->getReference('project_' . rand(0, 9)));
             }
@@ -57,8 +56,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
                 ->setLastname($faker->lastName())
                 ->setRoles(['ROLE_ADMIN'])
                 ->setTeam(self::TEAMS[array_rand(self::TEAMS)])
-                ->setPost('Web Developper/PO')
-                ->setCreationdate($faker->dateTimeThisYear());
+                ->setPost('Web Developper/PO');
 
             for ($j = 0; $j < rand(1, 5); $j++) {
                 $user->addProject($this->getReference('project_' . rand(0, 9)));
