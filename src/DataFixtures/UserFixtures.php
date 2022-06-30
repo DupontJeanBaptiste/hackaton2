@@ -39,7 +39,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
                 ->setTeam(self::TEAMS[array_rand(self::TEAMS)])
                 ->setPost('Web Developper');
             
-            for ($j = 0; $j < rand(1, 5); $j++) {
+            for ($j = 0; $j < rand(1, 2); $j++) {
                 $user->addProject($this->getReference('project_' . rand(0, 9)));
             }
 
