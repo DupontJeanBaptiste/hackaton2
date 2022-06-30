@@ -16,7 +16,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
         'Paris',
         'Lille',
         'Marseille',
-        'Londre',
+        'Londres',
         'Los Angeles'
     ];
 
