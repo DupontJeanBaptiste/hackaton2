@@ -16,9 +16,19 @@ class ProjectController extends AbstractController
     {
         $projects = $projectRepository->findAll();
 
-        return $this->render('project.html.twig', 
-    [
-        'projects' => $projects,
-    ]);
+        return $this->render(
+            'project/project.html.twig',
+            [
+                'projects' => $projects,
+            ]
+        );
+    }
+
+    #[Route('/search', name: 'app_search')]
+    public function search(): Response
+    {
+        return $this->render('project/search.html.twig', [
+            'controller_name' => 'ProjectController',
+        ]);
     }
 }

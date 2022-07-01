@@ -2,6 +2,7 @@
 
 namespace App\Components;
 
+use App\Entity\Project;
 use App\Repository\ProjectRepository;
 use Doctrine\Common\Collections\Collection;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
@@ -19,5 +20,10 @@ class ProjectComponent
 
     public function __construct(private ProjectRepository $projectRepository)
     {
+    }
+
+    public function getProject(): Project
+    {
+        return $this->blogRepository->find($this->id);
     }
 }

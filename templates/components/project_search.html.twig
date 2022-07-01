@@ -1,0 +1,13 @@
+<div {{ attributes }} class="m-4">
+    <input
+        type="search"
+        name="query"
+        value="{{ query }}"
+        data-action="live#update"
+    >
+    <ul>
+    {% for project in this.projects %}
+      <li>{{ project.name }}</li>
+    {% endfor %}
+    </ul>
+</div>
