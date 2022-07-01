@@ -50,6 +50,8 @@ class ProjectRepository extends ServiceEntityRepository
 
         return $this->createQueryBuilder('p')
             ->andWhere('p.name LIKE :query')
+            ->orWhere('p.description LIKE :query')
+            ->orWhere('p.client LIKE :query')
             ->setParameter('query', '%'.$query.'%')
             ->orderBy('p.id', 'ASC')
 //           ->setMaxResults(10)

@@ -2,8 +2,14 @@
 
 {% block body %}
 
+    <div class="container col-10">
+      {{ component('project_search') }}	
+    </div>
+	
 	<div class="container col-10">
 		{{component('all_projects')}}
 	</div>
+
+
   
 {% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Components;
 
 use App\Repository\ProjectRepository;
+use Doctrine\Common\Collections\Collection;
 use Symfony\UX\LiveComponent\Attribute\AsLiveComponent;
 use Symfony\UX\LiveComponent\DefaultActionTrait;
 use Symfony\UX\LiveComponent\Attribute\LiveProp;
@@ -11,6 +12,7 @@ use Symfony\UX\LiveComponent\Attribute\LiveProp;
 class ProjectSearchComponent
 {
     use DefaultActionTrait;
+
 
     #[LiveProp(writable: true)]
     public string $query = '';
@@ -22,7 +24,7 @@ class ProjectSearchComponent
         $this->ProjectRepository = $ProjectRepository;
     }
 
-    public function getProject(): array
+    public function getProjectsByQuery(): array
     {
         return $this->ProjectRepository->findByQuery($this->query);
     }
