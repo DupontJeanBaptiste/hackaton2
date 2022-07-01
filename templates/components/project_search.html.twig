@@ -1,0 +1,22 @@
+<div {{ attributes }} class="m-4 input-group">
+    <input
+        type="search"
+        name="query"
+        value="{{ query }}"
+        data-action="live#update"
+    >
+    
+    <button type="button" class="btn btn-outline-primary">search</button>
+
+    {% for project in this.projectsByQuery %}
+        {{ component('project', {
+    project: project,
+    id: project.id,
+    name: project.name,
+    description: project.description,
+    client: project.client,
+    users: project.users
+    }) }}
+    {% endfor %}
+</div>
+

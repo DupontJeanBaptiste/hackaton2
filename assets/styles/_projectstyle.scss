@@ -1,0 +1,64 @@
+.all-projects
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-description
+{
+    border-bottom: 5px solid #000000;
+}
+
+.sprint-button
+{
+    margin-top: 1vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
+
+.sprint-description
+{
+    border-bottom: 5px solid #000000;
+}
+
+.tache-button
+{
+    margin-top: 1vh;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap
+}
+
+.btn.btn-outline-warning
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn.btn-outline-success
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*.bi.bi-plus-circle
+{
+
+}*/
+
+.accordion.accordion-flush
+{
+    width: 80vw;
+    border: 10px double #000000;
+    margin-top: 5vh;
+}
