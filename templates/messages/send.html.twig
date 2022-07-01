@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messagerie{% endblock %}
+
+{% block body %}
+ <section class="container">
+ <div class="row">
+ <div class="col">
+ <h1>Envoyer un message</h1>
+    {{ form(form) }}
+    <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+  Voir mes dossiers
+</a>
+
+</div>
+</div>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h2 class="offcanvas-title" id="offcanvasExampleLabel">Mes dossiers</h2>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        Liste
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="{{path("messages")}}">acceuil</a></li>
+        <li><a class="dropdown-item" href="{{path("received")}}">Boîte de reception</a></li>
+        <li><a class="dropdown-item" href="{{path("messages")}}">Elements envoyés</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+ </section>
+ 
+{% endblock %}
