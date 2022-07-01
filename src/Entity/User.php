@@ -277,6 +277,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    public function isOnProject($project){
+        if($this->project->contains($project)){
+            return true;
+        } else {
+            return false;
+        }
+
     /**
      * @return Collection<int, Messages>
      */
