@@ -44,7 +44,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToOne(targetEntity: Parameter::class, cascade: ['persist', 'remove'])]
     private $parameter;
 
-    #[ORM\ManyToMany(targetEntity: Project::class, inversedBy: 'users')]
+    #[ORM\ManyToMany(targetEntity: Project::class, inversedBy: 'users', fetch:'EAGER')]
     private $project;
 
     #[ORM\ManyToMany(targetEntity: Tache::class, inversedBy: 'users')]
@@ -267,6 +267,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
+    }
+
+    public function isOnProject($project){
+        if($this->project->contains($project)){
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

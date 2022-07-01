@@ -1,6 +1,8 @@
 {% for project in this.allProjects %}
 
 	{{component('project', {
+    project: project,
+    id: project.id,
     name: project.name,
     description: project.description,
     client: project.client,

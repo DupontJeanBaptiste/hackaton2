@@ -11,6 +11,7 @@ use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 class ProjectComponent
 {
 
+    public Project $project;
     public string $id;
     public string $name;
     public string $description;
@@ -26,4 +27,6 @@ class ProjectComponent
     {
         return $this->blogRepository->find($this->id);
     }
+
 }
+
